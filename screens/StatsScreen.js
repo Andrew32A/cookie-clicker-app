@@ -3,9 +3,11 @@ import { View, Text, FlatList } from "react-native";
 import { useSelector } from "react-redux";
 
 export default function StatsScreen() {
+  const clicks = useSelector((state) => state.clicks);
   const cookies = useSelector((state) => state.cookies);
   const data = [
-    { key: "1", title: "Total Cookies", value: cookies.toString() },
+    { key: "1", title: "Total Clicks", value: clicks.toString() },
+    { key: "2", title: "Total Cookies", value: cookies.toString() },
     // TODO: add more stats here
   ];
 

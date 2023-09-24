@@ -2,6 +2,7 @@ import { createStore } from "redux";
 
 const initialState = {
   cookies: 0,
+  clicks: 0,
   upgrades: [
     { id: "1", name: "Auto Clicker", multiplier: 1, basePrice: 10, owned: 0 },
     { id: "2", name: "Grandma Baker", multiplier: 2, basePrice: 20, owned: 0 },
@@ -16,7 +17,11 @@ function cookieReducer(state = initialState, action) {
         (total, upgrade) => total + upgrade.multiplier * upgrade.owned,
         1
       );
-      return { ...state, cookies: state.cookies + incrementValue };
+      return {
+        ...state,
+        cookies: state.cookies + incrementValue,
+        clicks: state.clicks + 1,
+      };
     case "PURCHASE_UPGRADE":
       const upgradeIndex = state.upgrades.findIndex(
         (up) => up.id === action.id
