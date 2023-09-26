@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { View, Text, Image, TouchableOpacity, Animated } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Animated,
+  ImageBackground,
+} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function HomeScreen() {
@@ -28,20 +34,35 @@ export default function HomeScreen() {
   });
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text style={{ fontFamily: "Avenir", fontSize: 30, marginBottom: 20 }}>
-        {cookies} Cookies
-      </Text>
-      <TouchableOpacity onPress={() => dispatch({ type: "INCREMENT_COOKIE" })}>
-        <Animated.Image
-          source={require("../assets/cookie.webp")}
+    <ImageBackground
+      source={require("../assets/bg-cc.jpeg")}
+      style={{ flex: 1 }}
+      resizeMode="cover"
+    >
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text
           style={{
-            width: 300,
-            height: 300,
-            transform: [{ rotate: rotationInterpolate }],
+            fontFamily: "Avenir",
+            color: "white",
+            fontSize: 30,
+            marginBottom: 20,
           }}
-        />
-      </TouchableOpacity>
-    </View>
+        >
+          {cookies} Cookies
+        </Text>
+        <TouchableOpacity
+          onPress={() => dispatch({ type: "INCREMENT_COOKIE" })}
+        >
+          <Animated.Image
+            source={require("../assets/cookie.webp")}
+            style={{
+              width: 300,
+              height: 300,
+              transform: [{ rotate: rotationInterpolate }],
+            }}
+          />
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
   );
 }
