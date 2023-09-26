@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function HomeScreen() {
@@ -9,10 +9,12 @@ export default function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>{cookies} Cookies</Text>
-      <Button
-        title="Click Cookie"
-        onPress={() => dispatch({ type: "INCREMENT_COOKIE" })}
-      />
+      <TouchableOpacity onPress={() => dispatch({ type: "INCREMENT_COOKIE" })}>
+        <Image
+          source={require("../assets/cookie.webp")}
+          style={{ width: 300, height: 300 }}
+        />
+      </TouchableOpacity>
     </View>
   );
 }
