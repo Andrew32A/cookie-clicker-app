@@ -6,7 +6,7 @@ const initialState = {
   upgrades: [
     { id: "1", name: "Auto Clicker", multiplier: 1, basePrice: 10, owned: 0 },
     { id: "2", name: "Grandma Baker", multiplier: 2, basePrice: 20, owned: 0 },
-    // TODO: add more upgrades here
+    // TODO: add more upgrades here, add cookie factory
   ],
 };
 
