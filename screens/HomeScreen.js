@@ -12,7 +12,7 @@ export default function HomeScreen() {
     const spinAnimation = Animated.loop(
       Animated.timing(rotation, {
         toValue: 1,
-        duration: 20000,
+        duration: 10000,
         useNativeDriver: true,
       })
     );
