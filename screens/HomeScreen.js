@@ -29,7 +29,9 @@ export default function HomeScreen() {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>{cookies} Cookies</Text>
+      <Text style={{ fontFamily: "Avenir", fontSize: 30, marginBottom: 20 }}>
+        {cookies} Cookies
+      </Text>
       <TouchableOpacity onPress={() => dispatch({ type: "INCREMENT_COOKIE" })}>
         <Animated.Image
           source={require("../assets/cookie.webp")}
