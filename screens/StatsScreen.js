@@ -9,6 +9,7 @@ export default function StatsScreen() {
     { key: "1", title: "Total Clicks", value: clicks.toString() },
     { key: "2", title: "Total Cookies", value: cookies.toString() },
     // TODO: add more stats here
+    // ideas: number of total upgrades purchased, time played
   ];
 
   return (

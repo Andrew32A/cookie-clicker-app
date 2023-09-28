@@ -9,6 +9,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 export default function HomeScreen() {
+  // TODO: make number of cookies pop up when you click the cookie then float up and fade out
   const dispatch = useDispatch();
   const cookies = useSelector((state) => state.cookies);
 
