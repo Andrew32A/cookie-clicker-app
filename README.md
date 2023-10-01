@@ -19,7 +19,7 @@ A mobile adaptation of the popular web game, Cookie Clicker. Earn cookies by cli
 Clone the repository:
 
 ```bash
-git clone [repository_link]
+git clone https://github.com/Andrew32A/cookie-clicker-app.git
 ```
 
 Navigate to the project directory:
