@@ -14,7 +14,7 @@ A mobile adaptation of the popular web game, Cookie Clicker. Earn cookies by cli
 - Animated cookie rotation.
 - Display total cookies on the upgrades screen.
 
-#Setup and Installation
+# Setup and Installation
 
 Clone the repository:
 
