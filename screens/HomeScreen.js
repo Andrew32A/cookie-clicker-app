@@ -23,6 +23,13 @@ export default function HomeScreen() {
 
   const cookies = useSelector((state) => state.cookies);
 
+  const upgrades = useSelector((state) => state.upgrades);
+
+  const cookiesPerSecond = upgrades.reduce(
+    (total, upgrade) => total + upgrade.multiplier * upgrade.owned,
+    0
+  );
+
   const rotation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -60,6 +67,16 @@ export default function HomeScreen() {
           }}
         >
           {cookies} Cookies
+        </Text>
+        <Text
+          style={{
+            fontFamily: "Avenir",
+            color: "white",
+            fontSize: 18,
+            marginBottom: 10,
+          }}
+        >
+          {cookiesPerSecond}/sec
         </Text>
         <TouchableOpacity
           onPress={() => dispatch({ type: "INCREMENT_COOKIE" })}

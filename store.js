@@ -8,7 +8,14 @@ const initialState = {
   upgrades: [
     { id: "1", name: "Auto Clicker", multiplier: 1, basePrice: 10, owned: 0 },
     { id: "2", name: "Grandma Baker", multiplier: 2, basePrice: 20, owned: 0 },
-    // TODO: add more upgrades here, add cookie factory
+    {
+      id: "3",
+      name: "Cookie Factory",
+      multiplier: 20,
+      basePrice: 500,
+      owned: 0,
+    },
+    // TODO: add more upgrades here
   ],
 };
 
@@ -48,8 +55,14 @@ function cookieReducer(state = initialState, action) {
       }
       return state;
     case "INCREMENT_TIME":
+      const cookiesPerSecond = state.upgrades.reduce(
+        (total, upgrade) => total + upgrade.multiplier * upgrade.owned,
+        0
+      );
+
       return {
         ...state,
+        cookies: state.cookies + cookiesPerSecond,
         timePlayed: state.timePlayed + 1,
       };
     default:
