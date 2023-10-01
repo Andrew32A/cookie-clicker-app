@@ -11,6 +11,16 @@ import { useDispatch, useSelector } from "react-redux";
 export default function HomeScreen() {
   // TODO: make number of cookies pop up when you click the cookie then float up and fade out
   const dispatch = useDispatch();
+
+  // timer that increments time played every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      dispatch({ type: "INCREMENT_TIME" });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [dispatch]);
+
   const cookies = useSelector((state) => state.cookies);
 
   const rotation = useRef(new Animated.Value(0)).current;
