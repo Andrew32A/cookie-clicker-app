@@ -13,18 +13,6 @@ export default function UpgradesScreen() {
     }
   };
 
-  const determineEffectText = (item) => {
-    switch (item.id) {
-      case "1":
-      case "2":
-        return `+${item.multiplier} cookies per click`;
-      case "3":
-        return `+${item.multiplier} cookies per second`;
-      default:
-        return `+${item.multiplier} cookies`;
-    }
-  };
-
   const headerComponent = () => {
     return (
       <View
@@ -59,7 +47,7 @@ export default function UpgradesScreen() {
             {item.name} ({item.owned} owned)
           </Text>
           <Text>Cost: {item.basePrice * (item.owned + 1)} cookies</Text>
-          <Text>Effect: {determineEffectText(item)}</Text>
+          <Text>Effect: +{item.multiplier} cookies per click</Text>
           <Button
             title={`Buy ${item.name}`}
             onPress={() => purchaseUpgrade(item.id, item.basePrice, item.owned)}
