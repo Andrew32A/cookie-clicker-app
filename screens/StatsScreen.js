@@ -22,8 +22,6 @@ export default function StatsScreen() {
       title: "Time Played (in seconds)",
       value: timePlayed.toString(),
     },
-    // TODO: add more stats here
-    // ideas: number of total upgrades purchased, time played
   ];
 
   return (
