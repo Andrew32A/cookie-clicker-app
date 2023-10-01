@@ -25,9 +25,28 @@ export default function UpgradesScreen() {
     }
   };
 
+  const headerComponent = () => {
+    return (
+      <View
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 10,
+          borderBottomWidth: 1,
+          borderBottomColor: "#ccc",
+        }}
+      >
+        <Text style={{ fontSize: 24, fontWeight: "bold" }}>
+          {cookies} Cookies
+        </Text>
+      </View>
+    );
+  };
+
   return (
     <FlatList
       data={upgrades}
+      ListHeaderComponent={headerComponent}
       renderItem={({ item }) => (
         <View
           style={{
