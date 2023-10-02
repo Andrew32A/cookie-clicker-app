@@ -8,11 +8,29 @@ const initialState = {
   upgrades: [
     { id: "1", name: "Auto Clicker", multiplier: 1, basePrice: 10, owned: 0 },
     { id: "2", name: "Grandma Baker", multiplier: 2, basePrice: 20, owned: 0 },
+    { id: "3", name: "Farm", multiplier: 8, basePrice: 500, owned: 0 },
     {
-      id: "3",
+      id: "4",
       name: "Cookie Factory",
-      multiplier: 20,
-      basePrice: 500,
+      multiplier: 16,
+      basePrice: 1000,
+      owned: 0,
+    },
+    { id: "5", name: "Mine", multiplier: 32, basePrice: 2000, owned: 0 },
+    { id: "6", name: "Shipment", multiplier: 64, basePrice: 5000, owned: 0 },
+    {
+      id: "7",
+      name: "Alchemy Lab",
+      multiplier: 128,
+      basePrice: 10000,
+      owned: 0,
+    },
+    { id: "8", name: "Portal", multiplier: 256, basePrice: 50000, owned: 0 },
+    {
+      id: "9",
+      name: "Time Machine",
+      multiplier: 512,
+      basePrice: 100000,
       owned: 0,
     },
     // TODO: add more upgrades here
