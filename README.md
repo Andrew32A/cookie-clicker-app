@@ -34,8 +34,11 @@ Install dependencies:
 npm install
 ```
 
-Run the app:
+Run the app (Make sure to have xCode or Android Studio installed):
 
 ```bash
 npm start
+
+> Press a │ open Android
+> Press i │ open iOS simulator
 ```
